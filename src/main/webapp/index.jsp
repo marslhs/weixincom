@@ -1,10 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
 <html>  
   <head>  
-    <title>hello world</title>  
+    <title>标题</title>  
   </head>  
     
   <body>  
-    hello world
+    hello world！
   </body>  
 </html> 
