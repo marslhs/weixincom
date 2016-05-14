@@ -32,14 +32,4 @@ public class WeixinVerify {
         return false;
     }
     
-    public static void main(String[] args) {
-        String signature="05ab0b1910c2de31cc26b3b41d454ae41f00a4c2";
-        String echostr="763388167271472026";
-        String        timestamp="1461768832";
-        String nonce="2074281942";
-        String token = "HosenIsRight";
-        System.out.println(isFromWeixin(timestamp, nonce, token, signature));
-//        System.out.println(getSHA1(token, timestamp, nonce));
-    }
-
 }

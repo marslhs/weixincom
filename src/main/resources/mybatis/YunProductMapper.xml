@@ -4,8 +4,8 @@
   <resultMap id="BaseResultMap" type="com.mars.db.bean.YunProduct" >
     <id column="product_id" property="productId" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="capacity" property="capacity" jdbcType="SMALLINT" />
-    <result column="weight" property="weight" jdbcType="SMALLINT" />
+    <result column="capacity" property="capacity" jdbcType="INTEGER" />
+    <result column="weight" property="weight" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     product_id, name, capacity, weight
@@ -16,6 +16,13 @@
     from yun_product
     where product_id = #{productId,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectAllProducts" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yun_product
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from yun_product
     where product_id = #{productId,jdbcType=INTEGER}
@@ -23,8 +30,8 @@
   <insert id="insert" parameterType="com.mars.db.bean.YunProduct" >
     insert into yun_product (product_id, name, capacity, 
       weight)
-    values (#{productId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{capacity,jdbcType=SMALLINT}, 
-      #{weight,jdbcType=SMALLINT})
+    values (#{productId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{capacity,jdbcType=INTEGER}, 
+      #{weight,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.mars.db.bean.YunProduct" >
     insert into yun_product
@@ -50,10 +57,10 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="capacity != null" >
-        #{capacity,jdbcType=SMALLINT},
+        #{capacity,jdbcType=INTEGER},
       </if>
       <if test="weight != null" >
-        #{weight,jdbcType=SMALLINT},
+        #{weight,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -64,10 +71,10 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="capacity != null" >
-        capacity = #{capacity,jdbcType=SMALLINT},
+        capacity = #{capacity,jdbcType=INTEGER},
       </if>
       <if test="weight != null" >
-        weight = #{weight,jdbcType=SMALLINT},
+        weight = #{weight,jdbcType=INTEGER},
       </if>
     </set>
     where product_id = #{productId,jdbcType=INTEGER}
@@ -75,8 +82,8 @@
   <update id="updateByPrimaryKey" parameterType="com.mars.db.bean.YunProduct" >
     update yun_product
     set name = #{name,jdbcType=VARCHAR},
-      capacity = #{capacity,jdbcType=SMALLINT},
-      weight = #{weight,jdbcType=SMALLINT}
+      capacity = #{capacity,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=INTEGER}
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,5 +1,7 @@
 package com.mars.db.dao;
 
+import java.util.List;
+
 import com.mars.db.bean.YunProduct;
 
 public interface YunProductMapper {
@@ -8,6 +10,8 @@ public interface YunProductMapper {
     int insert(YunProduct record);
 
     int insertSelective(YunProduct record);
+    
+    List<YunProduct> selectAllProducts();
 
     YunProduct selectByPrimaryKey(Integer productId);
 

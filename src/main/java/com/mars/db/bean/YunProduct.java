@@ -5,9 +5,9 @@ public class YunProduct {
 
     private String name;
 
-    private Short capacity;
+    private Integer capacity;
 
-    private Short weight;
+    private Integer weight;
 
     public Integer getProductId() {
         return productId;
@@ -25,19 +25,19 @@ public class YunProduct {
         this.name = name == null ? null : name.trim();
     }
 
-    public Short getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(Short capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 
-    public Short getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(Short weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 }

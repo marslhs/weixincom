@@ -3,9 +3,12 @@
 <html>  
 <head>  
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-<title>Hello World</title>  
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/dingshui.js"></script>
+<title>订水</title>  
 </head>  
 <body>  
+
 ${message}  
 </body>  
 </html>
