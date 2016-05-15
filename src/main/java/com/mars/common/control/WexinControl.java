@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mars.common.control.utils.WeixinVerify;
+import com.mars.common.control.utils.WeixinUtil;
 
 @Controller
 public class WexinControl {
@@ -26,8 +26,8 @@ public class WexinControl {
         String echostr = request.getParameter("echostr");
         String timestamp = request.getParameter("timestamp");
         String nonce = request.getParameter("nonce");
-        if (WeixinVerify.isFromWeixin(timestamp, nonce, token, signature)) {
-            logger.error("verify:" + echostr);
+        if (WeixinUtil.isFromWeixin(timestamp, nonce, token, signature)) {
+            logger.info("verify:" + echostr);
             return Long.parseLong(echostr);
         }
         return 0;

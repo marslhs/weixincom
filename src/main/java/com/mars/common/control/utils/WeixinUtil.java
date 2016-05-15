@@ -4,8 +4,11 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.alibaba.fastjson.JSONObject;
+import com.mars.common.control.global.constant.WeixinConst;
 
-public class WeixinVerify {
+
+public class WeixinUtil {
     /**
      * 校验微信的签名。
      * @param timestamp
@@ -30,6 +33,11 @@ public class WeixinVerify {
             return true;
         }
         return false;
+    }
+    
+    public static boolean hasErrorCode(JSONObject json){
+        Integer errorCode = json.getInteger(WeixinConst.ErrorCodeKey);
+        return  errorCode!= null && errorCode.intValue() != 0;
     }
     
 }

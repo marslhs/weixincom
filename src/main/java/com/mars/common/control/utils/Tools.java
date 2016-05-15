@@ -27,10 +27,9 @@ public class Tools {
             return hexString.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            logger.error("sha1Hex-> meet exception when sha1Hex", e);
+            logger.warn("sha1Hex-> meet exception when sha1Hex", e);
         }
         return "";
     }
-
-
+    
 }
