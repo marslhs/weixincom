@@ -19,7 +19,7 @@
   		     url: "<%=path%>/user/loggin",
   		     async: false,                //true为异步加载，false为同步加载，参数为空时，默认异步加载
   		     cache: false,
-  		     data: null,
+  		     data: $("#form1").serialize(),
   		     dataType: "text",    
   		     timeout : 5000,
   		     success: function(data){

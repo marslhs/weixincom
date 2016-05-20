@@ -38,6 +38,7 @@ public class UserController
 	  System.out.println("hello yunsen!");
 	  String username = request.getParameter("username");
 	  String password = request.getParameter("password");
+	  System.out.println("form username : " + username + ", password : " + password);
 	  request.getRequestDispatcher("/hello.jsp").forward(request, response);;
 	  //response.sendRedirect(request.getContextPath()+"/hello.jsp");
   }
